@@ -1,0 +1,372 @@
+*{
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+img {
+    width: 100%;
+} 
+
+/*
+section{
+    min-height: 100px;
+    padding: 10px;
+    
+
+    width: 100vw;
+    background-color: coral;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: row;
+}
+
+*/
+
+
+/*
+    3 PROPIEDADES DENTRO DE UN CONTENEDOR FLEX: propiedades se le dan a los elementos de un contenedor, al igual que la propiedad order. 
+    - flex-basis: es width para elementos flexibles
+    - flex-shrink: es la capacidad de que un elemento flexible se encoja. Si lo pones en un elemento, solo afecta a ese elemento. Si le pones 0, no encoje
+    - flex-grow: es la capacidad que tiene un elemento flexible para agrandarse. Si lo pones en un elemento, solo afecta a ese elemento. Si le pones 0, no agranda
+
+*/
+
+
+/*
+div{
+    flex-basis: 0px;
+    height: 100%;
+    min-width: 50px;
+
+    background-color: aliceblue;
+
+    flex-shrink: 1;
+    flex-grow: 1;
+}
+
+.big{
+    flex-basis: 100%;
+    height: 100%;
+
+    background-color: antiquewhite;
+
+    flex-shrink: 3;
+    flex-grow: 1;
+
+}
+
+*/
+
+
+
+/*  EJEMPLO DE EJERCICIO  -  HEADER 
+a {
+    text-decoration: none;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+
+    padding: 10px;
+}
+
+.header__nav {
+    gap: 20px;
+    padding: 10px;
+
+    display: flex;
+}
+
+header .header__nav nav u {
+    display: flex;
+    gap: 10px;
+}
+
+header .header__nav nav ul li {
+    display: inline;
+
+}
+
+header .header__nav nav ul li a { /* si no queremos repetir código, podemos poner al final del link , "espacio" y pegar el otro link. Ej: header .header__links ul li a, header .header__nav nav ul li a { *//*
+    color: black;
+}
+
+header .header__links {
+    padding: 10px;
+}
+
+header .header__links ul {
+    display: flex;
+    gap: 10px;
+}
+
+header .header__links ul li {
+    list-style: none;
+    display: inline;
+
+}
+
+header .header__links ul li a { /* si no queremos repetir código, podemos poner al final del link , "espacio" y pegar el otro link. Ej: header .header__links ul li a, header .header__nav nav ul li a { *//*
+    color: black;/*
+}
+
+FIN DEL EJEMPLO DEL EJERCICO  -  HEADER */
+
+
+
+/* HEADER */
+a {
+    text-decoration: none;
+}
+
+
+header {
+    display: flex;
+    justify-content: space-between;
+
+    padding: 10px;
+}
+
+.header__nav {
+    display: flex;
+    gap: 20px;
+}
+
+header .header__nav nav {
+    display: flex;
+    gap: 20px;
+    
+}
+
+header .header__nav nav ul {
+    display: flex;
+    gap: 20px;
+}
+
+header .header__nav nav ul li{
+    display: inline;
+    
+}
+
+header .header__nav nav ul li a, header .header__links nav ul li a {
+    color: black;
+    line-height: 50px;
+}
+
+
+
+.header__links {
+    display: flex;
+    gap: 20px;
+}
+
+header .header__links nav {
+    display: flex;
+    gap: 20px;
+}
+
+header .header__links nav ul {
+    display: flex;
+    gap: 20px;
+
+}
+
+header .header__links nav ul li {
+    display: inline;
+}
+
+
+
+/* BANNER */
+
+.btn {
+    display: inline-block;
+    background-color: blue;
+    color: white;
+    padding: 10px 20px;
+    margin-top: 10px;
+    border-radius: 3px;
+}
+
+
+
+.banner {
+    background-image: url("https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Highlight-Surface-Pro-9-Type-Cover-Sapphire-Forest:VP4-1399x600");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 50px;
+    display: flex;
+    align-items: center;
+    padding: 30px;
+    min-height: 350px;
+    max-height: 350px;
+}
+
+.banner__content {
+    margin-top: 40px;
+    margin-left: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 40%;
+    align-items: start;
+}
+
+
+/* SERVICIOS */
+.servicios {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 60px;
+}
+
+.servicios__icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+} 
+
+.servicios__icon img {
+    width: 50px;
+    margin-bottom: 15px;
+}
+
+.servicios__icon a {
+    text-decoration: underline;
+}
+
+.servicios__links {
+    display: flex;
+    align-items: center;
+}
+
+
+/* TARJETAS */
+.seccion__tarjetas {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    max-width: 80%;
+    min-height: 200px;
+    margin: 50px auto;
+}
+
+.tarjetas {
+    border: 1px solid;
+    flex-basis: 0;
+    flex-grow: 1;
+    border-color: lightgray;
+    border-radius: 3px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.tarjetas a {
+    color: black;
+}
+
+.tarjetas h2 {
+    padding: 15px;
+}
+
+.tarjetas p {
+    padding: 15px;
+}
+
+.tarjetas .tarjetas__btn {
+    background-color: blue;
+    border-radius: 3px;
+    padding: 10px;
+    margin: 15px;
+    color: white;
+    display: inline-block;
+}
+
+.tarjetas a.tarjetas__btn__usuario {
+    display: inline-block;
+    color: blue;
+    padding: 15px;
+}
+
+
+/* BANNER XBOX */
+.bannerxbox {
+    background-image: url("https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Highlight-Xbox-Series-S-Light-Background:VP4-1260x600");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 50px;
+    display: flex;
+    align-items: center;
+    padding: 30px;
+    min-height: 500px;
+    max-height: 500px;
+}
+
+.bannerxbox__content {
+    margin-top: 40px;
+    margin-left: 60%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 40%;
+    align-items: start;
+}
+
+
+/* TARJETAS PARA LA EMPRESA */
+.nuevo {
+    background-color: orange;
+    font-size: 15px;
+    margin: 10px;
+    padding: 3px 6px;
+    display:inline-block;
+}
+
+/* RRSS */
+.rrss {
+    display: flex;
+    justify-content:none;
+    padding: 40px;
+    line-height: 50px;
+}
+
+.rrss__logo {
+    max-width: 52px;
+    max-height: 52px;
+    padding: 10px;
+}
+
+/* FOOTER */
+footer {
+    width: 100%;
+    margin: auto;
+    padding: 30px 50px;
+    font-size: 11px;
+    line-height: 30px;
+    background-color: lightgray;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: gray;
+}
+
+li {
+    list-style: none;
+    box-sizing: inherit;
+}
+
+.linkis__footer {
+    color: gray;
+}

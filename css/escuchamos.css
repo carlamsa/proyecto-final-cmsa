@@ -1,0 +1,55 @@
+/* PAGE CONTACTO*/
+.form {
+    margin-top: 10rem;
+}
+
+.form h1 {
+    text-align: center;
+}
+
+.form__row {
+    display: flex;
+    gap: 5rem;
+}
+
+.form__campos {
+    display: flex;
+    flex-direction: column;
+
+    padding: 0.5rem 0rem;
+}
+
+.form__campos textarea {
+    border-radius: 14px;
+    height: 7rem;
+    padding: 2rem;
+}
+
+label {
+    padding: .5rem 0rem;
+}
+
+input {
+    border: var(--color-white);
+    background-color: none;
+    border-radius: 16px;
+    padding: .5rem 1.5rem;
+    width: 37rem;
+}
+
+select {
+    border: var(--color-white);
+    background-color: none;
+    border-radius: 16px;
+    padding: .5rem 1.5rem;
+    width: 40rem;
+}
+
+.form__campos-submit {
+    border-radius: 14px;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    width: 2rem;
+}
+

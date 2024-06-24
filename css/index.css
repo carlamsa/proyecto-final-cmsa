@@ -1,0 +1,441 @@
+:root {
+    /* Branding colors */
+    --color-purple: #A328C6;
+    --color-orange: #FF6F5E; 
+    --color-bggrey: #1C1C1C; /* Color de fondo */
+    --color-white: #ffffff; /* Color de la letra */
+    --main-padding: 2em 10em; 
+    --color-degra: linear-gradient(to bottom right, var(--color-purple), var(--color-orange));
+    --max-width: 75rem;
+
+    /* TIPOGRAFÍA */
+    font-family: "Poppins", sans-serif;
+    line-height: 1;
+}
+
+/* ESTILOS TIPOGRAFÍAS */
+.h1 { font-weight: 700; font-size: 36px; }
+.h2 { font-weight: 400; font-size: 36px; }
+.h3 { font-weight: 700; font-size: 30px; }
+.h4 { font-weight: 400; font-size: 30px; }
+.h5 { font-weight: 200; font-size: 25px; }
+.h6 { font-weight: 400; font-size: 20px; }
+.p { font-weight: 400; font-size: 18px; }
+
+h1 { font-weight: 700; font-size: 36px; }
+h2 { font-weight: 400; font-size: 36px; }
+h3 { font-weight: 700; font-size: 30px; }
+h4 { font-weight: 400; font-size: 30px; }
+h5 { font-weight: 200; font-size: 25px; }
+h6 { font-weight: 500; font-size: 20px; margin: 1.3em 0em .7em 0em; }
+p { font-weight: 300; font-size: 18px; }
+
+.motivacionales { font-weight: 400; font-size: 64px; line-height: 1; }
+
+
+/* GLOBAL STYLES */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%; /* Asegúrate de que el html y body tengan altura completa */
+    box-sizing: border-box;
+    background-color: var(--color-bggrey);
+    color: var(--color-white);
+    font-family: "Poppins", sans-serif;
+}
+
+img {
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-white);
+}
+
+.global-margin {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Tablet*/
+@media (min-width: 22.5rem) and (max-width: 30rem){
+
+}
+/* Movil */
+@media (max-width: 22.5rem){
+    
+}
+
+.sin-punto {
+    list-style-type: none;
+    padding: 0;
+    margin:0;
+}
+
+/* DEGRA-HIC */
+.degra-hic {
+    margin: 0;
+    padding: 0;
+    background-image: url(../img/degra-hic.png);
+    width: 100%;
+    height: 20vh;
+    background-size:contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* -------------------------------------------------------------------------------------- */
+/* HEADER - MENU */
+.header {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: var(--main-padding);
+}
+
+.header__logo {
+    max-width: 18em;
+}
+
+.header__menu__links {
+    display: flex;
+    gap: .5em;
+    flex-flow: row nowrap;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.header__burger {
+    display: none;
+    font-size: 2em;
+    cursor: pointer;
+    position: fixed;
+    top: 1em;
+    right: 1em;
+    z-index: 50; 
+    transition: 5s;
+}
+
+@media screen and (max-width:480px) {
+    .header__burger {
+        display: block;
+        cursor: pointer;
+    }
+
+    .header__menu {
+        width: 100vw;
+        display: none;
+    }
+
+    .header__menu .activo {
+        display: block;
+    }
+
+    .header__menu__links {
+        flex-direction: column;
+    }
+
+    .header__menu__links li {
+        margin: 1rem 0;
+    }
+}
+
+/*
+@media (max-width: 1400px) {
+    .header__menu {
+        display: none;
+    }
+    .header__burger {
+        display: block;
+    }
+}*/
+
+/* HEADER MENU -- HOVER */
+.header__menu__links a {
+    position: relative;
+    display: inline-block;
+    padding: .5em 1.5em; /* Ajusta el espaciado del enlace */
+    border-radius: 50em;
+    overflow: hidden;
+}
+
+.header__menu__links a::after {
+    content: "\f04b"; /* Código Unicode para el icono de 'play' en Font Awesome */
+    font-family: "Font Awesome 5 Free"; /* Especifica la fuente de los iconos de Font Awesome */
+    font-weight: 900; /* Asegura que se use la versión sólida del icono */
+    position: absolute;
+    right: 1.8em; /* Ajusta la posición del ícono */
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: opacity 0.3s, transform 0.3s; /* Transición para el icono */
+}
+
+.header__menu__links a:hover {
+    background: linear-gradient(to bottom right, var(--color-purple), var(--color-orange));
+    padding-right: 3em; /* Ajusta el padding derecho para dar espacio al ícono */
+}
+
+.header__menu__links a:hover::after {
+    opacity: 1; /* Muestra el ícono al hacer hover */
+    transform: translateY(-50%) translateX(50%); /* Ajusta la posición del ícono dentro del enlace */
+    color: var(--color-white); /* Cambia el color del ícono al hacer hover */
+}
+
+.active{
+    background: linear-gradient(to bottom right, var(--color-purple), var(--color-orange));
+    padding: .5em 1.5em;
+}
+/* -------------------------------------------------------------------------------------- */
+
+/* ------------------------------------ HOME PAGE -------------------------------------------------- */
+/* BANNER */
+.banner {
+    margin: 0;
+    padding: 0;
+    background-image: url('../img/genetica-black.webp');
+    width: 100%;
+    height: 100vh; /* Ajusta la altura para cubrir toda la ventana */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 6em; /* Añade un padding superior para compensar la altura del header */
+}
+
+.banner__title {
+    padding: 5em;
+    position: relative; /* Añade posicionamiento relativo */
+    transform: translateY(0); /* Ajuste inicial, se cambiará con JavaScript */
+    transition: transform 0.3s ease-out; /* Agrega transición suave */
+    max-width: 10em;
+    text-align: center;
+}
+
+.banner__bienvenida {
+    padding: var(--main-padding); 
+    text-align: center;
+    display: flex;
+    margin: 0;
+}
+
+/* ESTRENOS */
+.genetica-al-dia {
+    margin-top: 15em;
+    background-color: var(--color-white);
+}
+
+.genetica-al-dia__txt {
+    color: var(--color-bggrey);
+    text-align: center;
+}
+/* -------------------------------------------------------------------------------------- */
+
+/* ------------------------------------------- CONTENIDO ------------------------------------------- */
+
+/* Carrousel de vídeos*/
+.contenido {
+    overflow: hidden;
+    align-content: center;
+    max-width: var(--max-width);
+    margin-top: 7.5rem;
+}
+
+.contenido .carousel  {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    max-width: var(--max-width);
+}
+.contenido .carousel .flecha-izquierda,
+.contenido .carousel .flecha-derecha {
+    position: absolute;
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
+    font-size: 2.5rem;
+    height: 50%;
+    top: calc(50% - 43.5%);
+    line-height: 2.5rem;
+    width: 50px;
+    color: var(--color-orange);
+    cursor: pointer;
+    z-index: 500;
+    transition: .2s ease;
+}
+
+.contenido .carousel .flecha-izquierda:hover,
+.contenido .carousel .flecha-derecha:hover {
+    color: var(--color-purple);
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.contenido .carousel .flecha-izquierda {
+    left: 0; /* poner la flecha en el borde del contenedor*/
+}
+
+.contenido .carousel .flecha-derecha {
+    right: 0; /* poner la flecha en el borde del contenedor*/
+}
+
+.contenido .carousel .contenido__jornadas {
+    width: 100%;
+    padding: 1.25rem 0;
+    overflow: hidden;
+    scroll-behavior: smooth;
+    display: flex;
+    gap: 1em;
+}
+
+.contenido .carousel .contenido__jornadas .contenido__jornadas__inner {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    min-width: 20%;
+    transition: .3s ease all;
+}
+
+.contenido .carousel .contenido__jornadas .contenido__jornadas__inner img {
+    width: 100%;
+    border-radius: .7rem;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.contenido .carousel .contenido__jornadas .contenido__jornadas__inner img.hover {
+    transform: scale(1.2);
+    transform-origin: center;
+}
+
+@media screen and (max-width: 900px) {
+    .contenido {
+        margin-top: 7.5rem;
+    }
+    
+    .contenido .carousel {
+        overflow: visible;
+    }
+
+    .contenido .carousel .contenido__jornadas {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.25rem;
+    }
+
+    .contenido .carousel .flecha-izquierda,
+    .contenido .carousel .flecha-derecha {
+        display: none;
+    }
+}
+
+/* 
+-------------------------------------------------------------------------------------- */
+
+/* ----------------------------------------- TE ESCUCHAMOS --------------------------------------------- */
+/* PAGE CONTACTO*/
+.form {
+    margin-top: 10rem;
+}
+
+.form h1 {
+    text-align: center;
+}
+
+.form__row {
+    display: flex;
+    gap: 5rem;
+}
+
+.form__campos {
+    display: flex;
+    flex-direction: column;
+
+    padding: 0.5rem 0rem;
+}
+
+.form__campos textarea {
+    border-radius: 14px;
+    height: 7rem;
+    padding: 2rem;
+}
+
+label {
+    padding: .5rem 0rem;
+}
+
+input {
+    border: var(--color-white);
+    background-color: none;
+    border-radius: 16px;
+    padding: .5rem 1.5rem;
+    width: 37rem;
+}
+
+select {
+    border: var(--color-white);
+    background-color: none;
+    border-radius: 16px;
+    padding: .5rem 1.5rem;
+    width: 40rem;
+}
+
+.form__campos-submit {
+    border-radius: 14px;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    width: 2rem;
+}
+/* -------------------------------------------------------------------------------------- */
+
+/* --------------------------------------------- FOOTER ----------------------------------------- */
+/* FOOTER */
+footer {
+    padding: var(--main-padding);
+    margin-top: 0;
+}
+.footer__container {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer__container__content{
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer__container__content__info{
+    display: flex;
+    gap: 2em;
+}
+
+.footer__container__content__info__sedes{
+    display: flex;
+    flex-direction: column;
+}
+
+.footer__container__content__rrss{
+    display: flex;
+}
+
+.footer__container__servicios{
+    display: flex;
+    padding-top: 3em;
+    gap: 3em;
+}
+/* -------------------------------------------------------------------------------------- */
