@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HiC Play</title>
+    <title>HiC Play - Contenido</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"> <!-- iconos bootstrap-->
     <link rel="stylesheet" href="css/index.css">
     <script defer src="js/index.js"></script>
     <script defer src="js/contenido.js"></script>
@@ -19,39 +20,25 @@
 
 <body>
     <!-- HEADER -->
-    <header>
-        <div class="header global-padding">
-            <picture>
-                <source srcset="#">
-                <a href="index.html">
-                    <img class="header__logo" src="img/logo-hic-blanco-png.png" alt="Logo">
-                </a>
-            </picture>
-            <nav class="header__menu">
-                <ul class="header__menu__links sin-punto">
-                    <li><a href="index.html" class="h6 hover-icon">Home</a></li>
-                    <li><a href="contenido.html" class="h6 active hover-icon5">Contenido</a></li>
-                    <li><a href="eventos.html" class="h6 hover-icon">Eventos</a></li>
-                    <li><a href="escuchamos.html" class="h6 hover-icon">Te escuchamos</a></li>
-                    <li><a href="contacto.html" class="h6 hover-icon">Contacto</a></li>
-                </ul>
-            </nav>
-            <div class="header__burger activo">
-                <picture>
-                    <source srcset="#">
-                    <a href="index.html">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-menu-2" width="44"
-                            height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                            <path d="M4 6l16 0" />
-                            <path d="M4 12l16 0" />
-                            <path d="M4 18l16 0" />
-                        </svg>
-                    </a>
-                </picture>
-            </div>
-        </div>
+    <header class="global-margin">
+        <picture>
+            <source srcset="#">
+            <a href="index.html">
+                <img class="logo" src="img/logo-hic-blanco-png.png" alt="Logo">
+            </a>
+        </picture>
+        <button class="abrir-menu" id="abrir"><i class="bi bi-list"></i></button>
+        <nav class="nav" id="nav">
+            <button class="cerrar-menu" id="cerrar"><i class="bi bi-x-lg"></i></button>
+
+            <ul class="nav__list sin-punto">
+                <li><a href="index.html" class="hover-icon">Home</a></li>
+                <li><a href="contenido.html" class="hover-icon5">Contenido</a></li>
+                <li><a href="eventos.html" class="hover-icon">Eventos</a></li>
+                <li><a href="escuchamos.html" class="hover-icon">Te escuchamos</a></li>
+                <li><a href="contacto.html" class="hover-icon">Contacto</a></li>
+            </ul>
+        </nav>
     </header>
 
     <!-- SECCIÓN DE JORNADAS -->
@@ -68,7 +55,7 @@
                     <picture>
                         <source srcset="#">
                         <a href="#">
-                            <img class="contenido__jornadas__img" src="img/adn.jpg" alt="jornada">
+                            <img class="contenido__jornadas__img image-wrapper" src="img/adn.jpg" alt="jornada">
                         </a>
                     </picture>
                     <h6>El ADN Desvelado</h6>
@@ -217,13 +204,13 @@
     <div class="degra-hic"> </div>
 
     <!-- FOOTER -->
-    <footer class="footer">
+    <footer class="footer global-margin">
         <section class="footer__container">
             <div class="footer__container__content">
                 <picture class="footer__container__content__logo">
                     <source srcset="#">
                     <a href="index.html">
-                        <img class="header__logo" src="img/logo-hic-blanco-png.png" alt="Logo">
+                        <img class="logo" src="img/logo-hic-blanco-png.png" alt="Logo">
                     </a>
                 </picture>
                 <div class="footer__container__content__info">
