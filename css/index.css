@@ -14,23 +14,23 @@
 }
 
 /* ESTILOS TIPOGRAFÍAS */
-.h1 { font-weight: 700; font-size: 36px; }
-.h2 { font-weight: 400; font-size: 36px; }
-.h3 { font-weight: 700; font-size: 30px; }
-.h4 { font-weight: 400; font-size: 30px; }
-.h5 { font-weight: 200; font-size: 25px; }
-.h6 { font-weight: 400; font-size: 20px; }
-.p { font-weight: 400; font-size: 18px; }
+.h1 { font-weight: 700; font-size: 2.25em; }
+.h2 { font-weight: 400; font-size: 2.25em; }
+.h3 { font-weight: 700; font-size: 1.875em; }
+.h4 { font-weight: 400; font-size: 1.875em; }
+.h5 { font-weight: 200; font-size: 1.563em; }
+.h6 { font-weight: 400; font-size: 1.25em; }
+.p { font-weight: 400; font-size: 1.125em; }
 
-h1 { font-weight: 700; font-size: 36px; }
-h2 { font-weight: 400; font-size: 36px; }
-h3 { font-weight: 700; font-size: 30px; }
-h4 { font-weight: 400; font-size: 30px; }
-h5 { font-weight: 200; font-size: 25px; }
-h6 { font-weight: 500; font-size: 20px; margin: 1.3em 0em .7em 0em; }
-p { font-weight: 300; font-size: 18px; }
+h1 { font-weight: 700; font-size: 2.25em; }
+h2 { font-weight: 400; font-size: 2.25em; }
+h3 { font-weight: 700; font-size: 1.875em; }
+h4 { font-weight: 400; font-size: 1.875em; }
+h5 { font-weight: 200; font-size: 1.563em; }
+h6 { font-weight: 500; font-size: 1.25em; margin: 1.3em 0em .7em 0em; }
+p { font-weight: 300; font-size: 1.125em; }
 
-.motivacionales { font-weight: 400; font-size: 64px; line-height: 1; }
+.motivacionales { font-weight: 400; font-size: clamp(2em, 5vw, 5em); line-height: 1; }
 
 
 /* GLOBAL STYLES */
@@ -76,7 +76,7 @@ a {
 
 /* DEGRA-HIC */
 .degra-hic {
-    margin: 0;
+    margin: -4rem 0px 0px 0px;
     padding: 0;
     background-image: url(../img/degra-hic.png);
     width: 100%;
@@ -94,6 +94,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    z-index: 10;
 }
 
 .logo {
@@ -110,6 +111,10 @@ header {
     display: flex;
     justify-content: end;
     gap: .3rem
+}
+
+.active {
+    opacity: 50%;
 }
 
 .abrir-menu,
@@ -137,6 +142,7 @@ header {
         align-items: start;
         gap: 1rem;
         position: absolute;
+        z-index: 10;
         top: 0;
         right: 0;
         bottom: 0;
@@ -355,7 +361,7 @@ header {
 /* ----------------------------------------- TE ESCUCHAMOS --------------------------------------------- */
 /* PAGE CONTACTO*/
 .form {
-    margin-top: 10rem;
+    margin-top: .5rem;
 }
 
 .form h1 {
@@ -364,13 +370,14 @@ header {
 
 .form__row {
     display: flex;
-    gap: 5rem;
+    flex-wrap: wrap;
+    gap: 2rem;
 }
 
 .form__campos {
+    flex: 1 1 calc(50% - 2rem); /* Ajuste flexible para que ocupe la mitad del contenedor con el gap */
     display: flex;
     flex-direction: column;
-
     padding: 0.5rem 0rem;
 }
 
@@ -384,30 +391,110 @@ label {
     padding: .5rem 0rem;
 }
 
-input {
+input, select {
     border: var(--color-white);
     background-color: none;
     border-radius: 16px;
     padding: .5rem 1.5rem;
-    width: 37rem;
-}
-
-select {
-    border: var(--color-white);
-    background-color: none;
-    border-radius: 16px;
-    padding: .5rem 1.5rem;
-    width: 40rem;
+    width: 100%;
+    box-sizing: border-box; 
 }
 
 .form__campos-submit {
-    border-radius: 14px;
-    padding: 2rem;
+    padding: 1rem 0rem;
     display: flex;
     justify-content: center;
-    width: 2rem;
+    width: 6rem;
+}
+
+@media screen and (max-width: 480px) {
+    .form__row {
+        flex-direction: column;
+    }
+
+    .form__campos {
+        flex: 1 1 100%; /* Ocupa todo el ancho del contenedor padre */
+    }
 }
 /* -------------------------------------------------------------------------------------- */
+
+
+/* --------------------------------------------- SOBRE NOSOTROS ----------------------------------------- */
+/* BANNER - SOBRE NOSOTROS */
+.banner-margin {
+    max-width: 1300px;
+    margin: 0 auto;
+    position: relative;
+    transition: margin 1s ease, max-width 1s ease;
+}
+
+.banner-no-margin { /* la pone js */
+    transition: margin 1s ease, max-width 1s ease;
+    max-height: 37.5rem;
+}
+
+.img-banner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: auto;
+    z-index: 1;
+    border-radius: 1.25rem;
+    overflow: hidden;
+}
+
+.img-fondo {
+    max-width: 100%;
+    max-height: auto;
+    border-radius: 1.25rem;
+    object-fit: cover;
+    pointer-events: none; /* Evitar que la imagen interfiera con los clics */
+}
+
+@media screen and (max-width: 1000px) {
+    .img-banner {
+    border-radius: 0;
+   }
+
+    .img-fondo {
+    border-radius: 0;
+    min-width: auto;
+    min-height: 10rem;
+   } 
+}
+
+.nosotros__banner {
+    position: absolute;
+    z-index: 1;
+    top: 30%;
+}
+
+@media screen and (max-width: 700px) {
+    .nosotros__banner {
+        position: absolute;
+        z-index: 1;
+        top: 15%;
+    }
+}
+
+.nosotros__banner h1 {
+    max-width: 30rem;
+    margin: 0 auto;
+}
+
+.appear {
+    transition: opacity .5s;
+}
+
+.nosotros__info {
+    position: relative;
+    margin-top: 450px;
+}
+
+/* -------------------------------------------------------------------------------------- */
+
 
 /* --------------------------------------------- FOOTER ----------------------------------------- */
 /* FOOTER */
