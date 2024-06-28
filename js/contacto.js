@@ -17,12 +17,39 @@ window.addEventListener('scroll', () => {
     }
 });
 
+// Que el texto aparezca y desaparezca sutilmente
 window.addEventListener('scroll', () => {
-    appearElement.forEach( (appear) => {
-        if (appear.getBoundingClientRect().top < 0 ){
+    appearElement.forEach((appear) => {
+        if (appear.getBoundingClientRect().top < 0) {
             appear.style.opacity = '0'
         } else {
             appear.removeAttribute('style')
         }
+    })
+})
+
+
+// Valores de la empresa
+const contents = document.querySelectorAll('.content');
+
+contents.forEach(content => {
+    const descripcion = content.querySelector('.valores__descripcion');
+    const titulo = content.querySelector('.valores__titulo');
+
+    content.addEventListener('mouseover', () => {
+        titulo.style.opacity = '1'
+        titulo.style.visibility = 'visible'
+        descripcion.style.display = 'block'
+        descripcion.style.opacity = '1'
+        descripcion.style.visibility = 'visible'
+    })
+
+    
+    content.addEventListener('mouseout', () => {
+        titulo.style.opacity = '1'
+        titulo.style.visibility = 'visible'
+        descripcion.style.display = 'none'
+        descripcion.style.opacity = '0'
+        descripcion.style.visibility = 'hidden'
     })
 })
